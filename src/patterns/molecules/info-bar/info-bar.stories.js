@@ -4,6 +4,11 @@ import './info-bar.scss';
 
 export default {
   title: 'Molecules|InfoBar',
+  parameters: {
+    centered: {
+      disable: true,
+    },
+  },
 };
 
 export const attention = () => infoBar(

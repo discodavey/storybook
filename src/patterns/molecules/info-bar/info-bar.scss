@@ -1,8 +1,10 @@
 @use "../../../shared-styles/normalize"; // Always used first
+@use "../../../shared-styles/baseline";
 @use "../../../shared-styles/font";
 @use "../../../shared-styles/color";
 @use "../../../shared-styles/link";
-@use "../../../shared-styles/spacing";
+@use "../../../shared-styles/rem";
+@use "../../../shared-styles/space";
 @use "../../../shared-styles/typography";
 @use "../../../shared-styles/utilities";
 
@@ -47,12 +49,12 @@ $info-bar-image-offset: font.$size !default;
 // }
 
 .info-bar__image {
-  // TODO: Add block-size mixin as logical properties are included.
-  // TODO: Add margin mixin as logical properties are included.
+  @include space.block($end: rem.calculate(baseline.for-units(2)));
+  @include space.margin(0 $info-bar-image-offset, inline);
   vertical-align: top;
 
   @supports (display: flex) {
-    // TODO: Add block-size mixin as logical properties are included
+    @include space.block($end: rem.calculate(baseline.for-units(2)));
     // TODO: Add max-block-size mixin as logical properties are included
   }
 }
